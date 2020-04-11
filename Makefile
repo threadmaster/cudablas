@@ -14,10 +14,6 @@ COPTFLAGS = -ffast-math -fprefetch-loop-arrays -ftree-vectorize -ftree-vectorize
 OLDFORMAT = -fixed-form
 LIBFLAG = 
 GCCOPT = -param l2-cache-size=2048 
-#ATLAS = /usr/local/ATLAS/lib/libf77blas.a /usr/local/ATLAS/lib/libcblas.a /usr/local/ATLAS/lib/libatlas.a
-#ATLAS = -L/usr/local/ATLAS/lib -lf77blas -lcblas -latlas
-#ATLAS = -L/usr/lib64/atlas -lptf77blas -lptcblas -latlas
-ATLAS = /usr/lib64/atlas/libptf77blas.a /usr/lib64/atlas/libptcblas.a  /usr/lib64/atlas/libatlas.a
 CUBLAS = /usr/local/cuda/lib64/libcublas.so /usr/local/cuda/lib64/libcudart.so
 
 debug ?= n
@@ -27,6 +23,7 @@ else
     CFLAGS += -O3 -mtune=native -march=native 
 endif
 
+#NOTE -- for Quadro P4000 use sm_61, for P100 use sm_60
 NVCC = nvcc
 NVCCFLAGS = -DCUBLAS -arch sm_61 -I/usr/local/cuda/include/
 COPTFLAGS = -O3 

@@ -18,10 +18,9 @@ extern "C" {
 double walltime_() 
 {
 	struct timeval tp;
-    int rtn;
 	double seconds;
 
-	rtn=gettimeofday(&tp, NULL);
+	gettimeofday(&tp, NULL);
 
 	seconds = tp.tv_sec + factor * tp.tv_usec;
 
