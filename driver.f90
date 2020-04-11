@@ -36,7 +36,7 @@ do i = 1, N
      vecb(i) = 1.0 / sqrt( dble(N))
 enddo
 
-call zeromat( N );
+!call zeromat( N );
 
 call tprod(veca, N, vecb, N, matrixa, N);
 call tprod(veca, N, vecb, N, matrixb, N);
@@ -44,7 +44,7 @@ call tprod(veca, N, vecb, N, matrixb, N);
 wall_start = walltime()
 cpu_start = cputime()
 
-call mmult(matrixa, N, matrixa, N, matrixc, N);
+call mmm(N, matrixa, matrixa, matrixc);
 !call dgemm('N','N',N,N,N,ONE,matrixa,N,matrixb,N,ZERO,matrixc,N)
 
 cpu_end = cputime()
