@@ -28,7 +28,7 @@ else
 endif
 
 NVCC = nvcc
-NVCCFLAGS = -DCUBLAS -arch sm_13 -I/usr/local/cuda-4.2/cuda/include/
+NVCCFLAGS = -DCUBLAS -arch sm_61 -I/usr/local/cuda-4.2/cuda/include/
 COPTFLAGS = -O3 
 LIBFLAG = $(CUBLAS)  
 
