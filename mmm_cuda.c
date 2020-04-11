@@ -9,6 +9,7 @@ extern "C" {
 /* C U D A   B L A S   S E C T I O N  */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
 
@@ -87,5 +88,4 @@ void mmm_( int *len,  double *A, double *B, double *C ){
 }
 
 
-#endif
 
