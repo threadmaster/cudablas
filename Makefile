@@ -18,7 +18,7 @@ GCCOPT = -param l2-cache-size=2048
 #ATLAS = -L/usr/local/ATLAS/lib -lf77blas -lcblas -latlas
 #ATLAS = -L/usr/lib64/atlas -lptf77blas -lptcblas -latlas
 ATLAS = /usr/lib64/atlas/libptf77blas.a /usr/lib64/atlas/libptcblas.a  /usr/lib64/atlas/libatlas.a
-CUBLAS = /usr/local/cuda-4.2/cuda/lib64/libcublas.so /usr/local/cuda-4.2/cuda/lib64/libcudart.so
+CUBLAS = /usr/local/cuda/lib64/libcublas.so /usr/local/cuda/lib64/libcudart.so
 
 debug ?= n
 ifeq ($(debug), y)
@@ -28,7 +28,7 @@ else
 endif
 
 NVCC = nvcc
-NVCCFLAGS = -DCUBLAS -arch sm_61 -I/usr/local/cuda-4.2/cuda/include/
+NVCCFLAGS = -DCUBLAS -arch sm_61 -I/usr/local/cuda/include/
 COPTFLAGS = -O3 
 LIBFLAG = $(CUBLAS)  
 
